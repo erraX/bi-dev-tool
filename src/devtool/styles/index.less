@@ -1,0 +1,31 @@
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.MuiIconButton-root.tab-icon-refresh {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}
+
+.bdev-tab-panel {
+  height: calc(100% - 48px);
+  width: 100%;
+}
+
+.vertical-split-panel {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  margin-top: 3px;
+
+  &__panel {
+    flex-grow: 1;
+    padding: 10px;
+
+    &.left {
+      border-right: 1px solid #eee;
+    }
+  }
+}

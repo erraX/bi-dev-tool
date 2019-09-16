@@ -1,0 +1,23 @@
+{
+  "name": "BiDevTools",
+  "version": "1.0.2",
+  "manifest_version": 2,
+  "description": "Bi dev tools",
+  "devtools_page": "./html/index.html",
+  "externally_connectable": {
+    "matches": ["http://*/*", "https://*/*"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./content.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ]
+}

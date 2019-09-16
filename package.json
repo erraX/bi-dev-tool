@@ -1,0 +1,60 @@
+{
+  "name": "bi-dev-tool",
+  "version": "1.0.0",
+  "description": "bi dev tool",
+  "main": "./extension/index.js",
+  "keywords": [
+    "chrome",
+    "extension",
+    "bi",
+    "dev-tool"
+  ],
+  "author": "minjieni",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf -rf ./extension",
+    "start": "cross-env NODE_ENV=development webpack --watch --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "check-ts": "tsc",
+    "pre-commit": "lint-staged && yarn check-ts"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "cross-env": "^5.2.1",
+    "eslint-loader": "2.2.1",
+    "file-loader": "^4.2.0",
+    "fork-ts-checker-webpack-plugin": "^1.5.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.0.1",
+    "webpack": "^4.39.3"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.4.1",
+    "@material-ui/icons": "^4.4.1",
+    "classnames": "^2.2.6",
+    "clsx": "^1.0.4",
+    "downshift": "^3.3.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-json-view": "^1.19.1",
+    "react-select": "^3.0.4"
+  }
+}
